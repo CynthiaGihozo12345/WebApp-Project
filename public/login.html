@@ -4,44 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Login | CODERWANDA Ltd</title>
+    <title>CODERWANDA Ltd | Login</title>
 
     <style>
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #f1f5f9;
+            background: linear-gradient(120deg, #071d35, #087f8c);
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            margin: 0;
         }
 
-        .login-container {
+        .login-box {
             background: white;
-            padding: 35px;
-            width: 100%;
-            max-width: 400px;
+            width: 380px;
+            padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
         }
 
-        h1 {
+        h2 {
             text-align: center;
-            color: #1e3a8a;
+            color: #087f8c;
+            margin-bottom: 10px;
         }
 
-        p {
+        .subtitle {
             text-align: center;
-            color: #64748b;
-        }
-
-        .form-group {
-            margin-bottom: 18px;
+            color: #666;
+            margin-bottom: 25px;
         }
 
         label {
@@ -50,163 +48,83 @@
             font-weight: bold;
         }
 
-        input[type="email"],
-        input[type="password"],
-        input[type="text"] {
+        input {
             width: 100%;
             padding: 12px;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
 
-        input:focus {
-            outline: 2px solid #2563eb;
-        }
-
-        .password-container {
-            position: relative;
-        }
-
-        .password-container input {
-            padding-right: 65px;
-        }
-
-        .show-password {
-            position: absolute;
-            right: 10px;
-            top: 12px;
-            border: none;
-            background: none;
-            color: #2563eb;
-            cursor: pointer;
-        }
-
-        .options {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 13px;
-            margin-bottom: 20px;
-        }
-
-        a {
-            color: #2563eb;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .login-btn {
+        button {
             width: 100%;
             padding: 13px;
-            background: #2563eb;
+            background: #087f8c;
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
         }
 
-        .login-btn:hover {
-            background: #1d4ed8;
+        button:hover {
+            background: #071d35;
         }
 
-        .register-link {
-            margin-top: 20px;
+        .links {
             text-align: center;
+            margin-top: 20px;
+            line-height: 2;
         }
 
+        a {
+            color: #087f8c;
+            text-decoration: none;
+        }
+
+        .logo {
+            color: #35c5a0;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
     </style>
 </head>
 
 <body>
 
-    <div class="login-container">
+<div class="login-box">
 
-        <h1>Welcome Back!</h1>
+    <div class="logo">CODERWANDA Ltd</div>
 
-        <p>Login to your CODERWANDA account</p>
+    <h2>Welcome Back!</h2>
 
-        <form action="/login" method="POST">
+    <p class="subtitle">Login to access your account</p>
 
-            <div class="form-group">
-                <label for="email">Email Address</label>
+    <form action="#" method="POST">
 
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Enter your email"
-                    autocomplete="username"
-                    required>
-            </div>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email"
+               placeholder="Enter your email" required>
 
-            <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password"
+               placeholder="Enter your password" required>
 
-                <label for="password">Password</label>
+        <button type="submit">Login</button>
 
-                <div class="password-container">
+    </form>
 
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        placeholder="Enter your password"
-                        autocomplete="current-password"
-                        required>
+    <div class="links">
+        <p>Don't have an account?
+            <a href="register.html">Register here</a>
+        </p>
 
-                    <button
-                        type="button"
-                        class="show-password"
-                        onclick="togglePassword()">
-                        Show
-                    </button>
-
-                </div>
-            </div>
-
-            <div class="options">
-
-                <label>
-                    <input type="checkbox" name="remember">
-                    Remember me
-                </label>
-
-                <a href="forgot-password.html">
-                    Forgot Password?
-                </a>
-
-            </div>
-
-            <button type="submit" class="login-btn">
-                Login
-            </button>
-
-        </form>
-
-        <div class="register-link">
-            Don't have an account?
-            <a href="register.html">Create Account</a>
-        </div>
-
+        <p><a href="index.html">Back to Home</a></p>
     </div>
 
-    <script>
-        function togglePassword() {
-            const password = document.getElementById("password");
-            const button = document.querySelector(".show-password");
-
-            if (password.type === "password") {
-                password.type = "text";
-                button.textContent = "Hide";
-            } else {
-                password.type = "password";
-                button.textContent = "Show";
-            }
-        }
-    </script>
+</div>
 
 </body>
 </html>
