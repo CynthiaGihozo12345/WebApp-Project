@@ -8,17 +8,11 @@ stage('Run Tests') {
         sh 'npm test -- --passWithNoTests'
     }
 }
-        stage('Install Dependencies') {
-            steps {
-                sh 'npm ci'
-            }
-        }
-
         stage('Run Tests') {
-            steps {
-                sh 'npm test'
-            }
-        }
+    steps {
+        sh 'npm test'
+    }
+}
 
     }
 
