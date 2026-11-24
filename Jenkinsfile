@@ -34,7 +34,7 @@ pipeline {
                     docker rm -f webapp-container || true
                     docker run -d \
                     --name webapp-container \
-                    -p 3000:3000 \
+                    -p 8088:3000 \
                     webapp:1.0
                 '''
             }
