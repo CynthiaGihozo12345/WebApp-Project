@@ -2,12 +2,7 @@
 pipeline {
     agent any
 
-    stages {
-stage('Run Tests') {
-    steps {
-        sh 'npm test -- --passWithNoTests'
-    }
-}
+   
         stage('Run Tests') {
     steps {
         sh 'npm test'
